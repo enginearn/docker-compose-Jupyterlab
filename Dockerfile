@@ -1,9 +1,9 @@
-FROM python:3.11.2-slim-bullseye
+FROM python:slim-bullseye
 ARG DEBIAN_FRONTEND=noninteractive
 
 ENV TZ=Asia/Tokyo
 USER root
-WORKDIR /root/code
+WORKDIR /code
 
 COPY requirements.txt requirements.txt
 RUN apt update && apt upgrade -y && \

@@ -1,11 +1,10 @@
-version: "3.9"
 services:
   jupyter:
     build:
       context: .
-    image: enginearn/python-jupyterlab
+      dockerfile: ./Dockerfile
     container_name: python-jupyterlab
-    working_dir: /root/code
+    working_dir: /code
     restart: always
     entrypoint: >
       jupyter-lab
@@ -14,11 +13,8 @@ services:
         --port=8888
         --no-browser
         --NotebookApp.token=''
-        --notebook-dir=/root/code
+        --notebook-dir=/code
     ports:
       - "8888:8888"
     volumes:
-      - .:/root/code
-
-  postgres:
-    image: "postgres:15-alpine"
+      - ./code:/code

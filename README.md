@@ -1,3 +1,5 @@
+# Dockerfile for JupyterLab
+
 ``` Dockerfile
 FROM python:latest
 
@@ -15,6 +17,8 @@ RUN apt update && apt upgrade -y && \
 ENTRYPOINT ["jupyter lab"]
 CMD ["jupyter lab", "--ip=0.0.0.0 --allow-root", "--no-browser", "-b", "localhost"]
 ```
+
+Run container
 
 ``` PowerShell
 > docker run -it --rm -p 8888:8888 --name base-jupyterlab enginearn/base-jupyter bash
