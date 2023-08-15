@@ -2,7 +2,7 @@ services:
   jupyter:
     build:
       context: .
-      dockerfile: ./Dockerfile
+      dockerfile: Dockerfile
     container_name: python-jupyterlab
     working_dir: /code
     restart: always
